@@ -10,4 +10,7 @@
     <type name="Magento\Customer\CustomerData\SectionPool">
         <plugin name="customgento_removeproductcomparison" type="CustomGento\RemoveProductComparison\Plugin\RemoveCompareSectionNamePlugin" sortOrder="10"/>
     </type>
+    <type name="Magento\Catalog\Block\Widget\RecentlyCompared">
+        <plugin name="customgento_removeproductcomparison" type="CustomGento\RemoveProductComparison\Plugin\RemoveCompareWidgetPlugin" sortOrder="10"/>
+    </type>
 </config>
