@@ -12,4 +12,4 @@ Remove Product Comparison for Magento 2 removes the product comparison feature c
 There is no configuration.
 
 ## Copyright
-&copy; 2020 CustomGento GmbH
+© 2020 - present CustomGento GmbH
