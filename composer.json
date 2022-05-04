@@ -2,7 +2,6 @@
     "name": "customgento/module-remove-product-comparison-m2",
     "description": "Remove Product Comparison for Magento 2 removes the product comparison feature completely from Magento.",
     "type": "magento2-module",
-    "version": "1.1.1",
     "license": "OSL-3.0",
     "authors": [
         {
