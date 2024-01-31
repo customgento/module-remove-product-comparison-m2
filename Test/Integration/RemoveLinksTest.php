@@ -34,7 +34,7 @@ class RemoveLinksTest extends AbstractController
         $this->dispatch('/catalog/product/view/id/1');
         $body = $this->getResponse()->getBody();
         foreach ($this->unwantedHtml as $unwantedHtml) {
-            self::assertNotContains($unwantedHtml, $body);
+            self::assertStringNotContainsString($unwantedHtml, $body);
         }
     }
 
@@ -46,7 +46,7 @@ class RemoveLinksTest extends AbstractController
         $this->dispatch('/catalog/category/view/id/333');
         $body = $this->getResponse()->getBody();
         foreach ($this->unwantedHtml as $unwantedHtml) {
-            self::assertNotContains($unwantedHtml, $body);
+            self::assertStringNotContainsString($unwantedHtml, $body);
         }
     }
 }
