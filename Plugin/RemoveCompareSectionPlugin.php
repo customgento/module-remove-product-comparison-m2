@@ -9,6 +9,11 @@ use Magento\Customer\CustomerData\SectionPoolInterface;
 class RemoveCompareSectionPlugin
 {
     /**
+     * Remove the product comparison data from the customer sections data.
+     *
+     * @param SectionPoolInterface $sectionPool
+     * @param array<string,mixed> $result
+     * @return array<string,mixed>
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function afterGetSectionsData(SectionPoolInterface $sectionPool, array $result): array

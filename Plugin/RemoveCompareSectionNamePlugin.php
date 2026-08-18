@@ -9,6 +9,11 @@ use Magento\Customer\CustomerData\SectionPool;
 class RemoveCompareSectionNamePlugin
 {
     /**
+     * Remove the product comparison sections from the section name list.
+     *
+     * @param SectionPool $sectionPool
+     * @param string[] $result
+     * @return list<string>
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function afterGetSectionNames(SectionPool $sectionPool, array $result): array
