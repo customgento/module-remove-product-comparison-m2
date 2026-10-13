@@ -33,9 +33,9 @@ class RemoveLinksTest extends AbstractController
     public function testNoCompareLinkOnProductPage(): void
     {
         $this->dispatch('/catalog/product/view/id/1');
-        /** @var Response $response */
         $response = $this->getResponse();
-        $body     = $response->getBody();
+        self::assertInstanceOf(Response::class, $response);
+        $body = $response->getBody();
         foreach ($this->unwantedHtml as $unwantedHtml) {
             self::assertStringNotContainsString($unwantedHtml, $body);
         }
@@ -47,9 +47,9 @@ class RemoveLinksTest extends AbstractController
     public function testNoCompareLinkOnCategoryPage(): void
     {
         $this->dispatch('/catalog/category/view/id/333');
-        /** @var Response $response */
         $response = $this->getResponse();
-        $body     = $response->getBody();
+        self::assertInstanceOf(Response::class, $response);
+        $body = $response->getBody();
         foreach ($this->unwantedHtml as $unwantedHtml) {
             self::assertStringNotContainsString($unwantedHtml, $body);
         }
