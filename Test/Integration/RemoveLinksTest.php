@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace CustomGento\RemoveProductComparison\Test\Integration;
 
 use Magento\Catalog\Helper\Product\Compare as ProductCompareHelper;
+use Magento\TestFramework\Response;
 use Magento\TestFramework\TestCase\AbstractController;
 
 class RemoveLinksTest extends AbstractController
@@ -32,7 +33,9 @@ class RemoveLinksTest extends AbstractController
     public function testNoCompareLinkOnProductPage(): void
     {
         $this->dispatch('/catalog/product/view/id/1');
-        $body = $this->getResponse()->getBody();
+        /** @var Response $response */
+        $response = $this->getResponse();
+        $body     = $response->getBody();
         foreach ($this->unwantedHtml as $unwantedHtml) {
             self::assertStringNotContainsString($unwantedHtml, $body);
         }
@@ -44,7 +47,9 @@ class RemoveLinksTest extends AbstractController
     public function testNoCompareLinkOnCategoryPage(): void
     {
         $this->dispatch('/catalog/category/view/id/333');
-        $body = $this->getResponse()->getBody();
+        /** @var Response $response */
+        $response = $this->getResponse();
+        $body     = $response->getBody();
         foreach ($this->unwantedHtml as $unwantedHtml) {
             self::assertStringNotContainsString($unwantedHtml, $body);
         }
